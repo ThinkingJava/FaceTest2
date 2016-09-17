@@ -11,21 +11,25 @@ public class Student  implements Serializable {
     private String faceid;
     private String grade;
     private String imagepath;
+    private String createtime;
 
     public Student(){}
-    public Student(int id, String name,String faceid ,String grade,String imagepath) {
+    public Student(int id, String name,String faceid ,String imagepath,String grade,String createtime) {
         this.id = id;
         this.name = name;
+        this.faceid = faceid;
         this.grade = grade;
         this.imagepath = imagepath;
+        this.createtime = createtime;
     }
 
-    public Student(String name, String faceid,String grade,String imagepath) {
+    public Student(String name, String faceid,String imagepath,String grade) {
 
         this.name = name;
         this.faceid = faceid;
         this.grade = grade;
         this.imagepath=imagepath;
+
     }
 
     public int getId() {
@@ -66,5 +70,25 @@ public class Student  implements Serializable {
 
     public void setImagepath(String imagepath) {
         this.imagepath = imagepath;
+    }
+
+    public String getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(String createtime) {
+        this.createtime = createtime;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", faceid='" + faceid + '\'' +
+                ", grade='" + grade + '\'' +
+                ", imagepath='" + imagepath + '\'' +
+                ", createtime='" + createtime + '\'' +
+                '}';
     }
 }

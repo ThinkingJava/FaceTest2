@@ -41,6 +41,8 @@ public class AttendAdapter extends
 
         ImageView mImg;
         TextView mTxt;
+        TextView mClass;
+        TextView mTime;
     }
 
     @Override
@@ -60,8 +62,12 @@ public class AttendAdapter extends
         ViewHolder viewHolder = new ViewHolder(view);
 
         viewHolder.mImg = (ImageView) view
-                .findViewById(R.id.item_image);
-        viewHolder.mTxt = (TextView)view.findViewById(R.id.item_text);
+                .findViewById(R.id.ivBook);
+        viewHolder.mTxt = (TextView)view.findViewById(R.id.tvTitle);
+
+        viewHolder.mTime = (TextView)view.findViewById(R.id.tvDesc);
+
+        viewHolder.mClass = (TextView)view.findViewById(R.id.tvClass);
         return viewHolder;
     }
 
@@ -75,6 +81,8 @@ public class AttendAdapter extends
         Bitmap bitmap=convertToBitmap(mAttend.get(i).getImagepath(),480,640);
         viewHolder.mImg.setImageBitmap(bitmap);
         viewHolder.mTxt.setText(mAttend.get(i).getName());
+        viewHolder.mTime.setText(mAttend.get(i).getCreatetime());
+        viewHolder.mClass.setText(mAttend.get(i).getGrade());
     }
 
     public Bitmap convertToBitmap(String path, int w, int h) {

@@ -8,8 +8,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.media.SoundPool;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -23,7 +21,6 @@ import com.example.yangchenghuan.db.DatabaseHandler;
 import com.example.yangchenghuan.entity.Attend;
 import com.example.yangchenghuan.utils.BitmapUtil;
 import com.example.yangchenghuan.utils.CustomUtil;
-import com.example.yangchenghuan.utils.FileUtils;
 import com.example.yangchenghuan.utils.Logs;
 import com.example.yangchenghuan.utils.MeasureUtil;
 import com.example.yangchenghuan.utils.StringUtils;
@@ -34,7 +31,6 @@ import com.techshino.eyekeysdk.conn.Constant;
 import com.techshino.eyekeysdk.entity.Face;
 import com.techshino.eyekeysdk.entity.FaceAttrs;
 import com.techshino.eyekeysdk.entity.MatchIdentify;
-import com.techshino.eyekeysdk.entity.MatchVerify;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -361,15 +357,16 @@ public class IdentifyActivity extends BaseAppcompatActivity implements CameraSur
         mVerifyLayout.setVisibility(View.VISIBLE);
 
         if (StringUtils.isEquals(data.getRes_code(), Constant.RES_CODE_0000) ) {
-            Logs.i(TAG, "matchIdentify=" + data.getFace().get(0).getResult().get(0).toString());
+      //      Logs.i(TAG, "matchIdentify=" + data.getFace().get(0).getResult().get(0).toString());
             double similary=data.getFace().get(0).getResult().get(0).getSimilarity();
             if(similary>85) {
                  String name=data.getFace().get(0).getResult().get(0).getPerson_name();
                 ToastUtils.show(this, name + " 签到成功");
                 identifySuc(data.getFace().get(0).getResult().get(0).getSimilarity(), data.getFace().get(0).getResult().get(0).getPerson_name());
                 String picname=(new Date().getTime())+".png";
-                BitmapUtil.saveBitmap(mBitmapList.get(0),picname);  //保持图片
-                Attend attend=new Attend(name,faceall,mClass,picname);
+                String path=IdentifyActivity.this.getCacheDir()+"/facename/"+picname;
+                BitmapUtil.saveBitmapToFile(mBitmapList.get(0),path);  //保持图片
+                Attend attend=new Attend(name,faceall,path,mClass);
                 dbHandler.addAttend(attend);   //考勤插入数据库
             }else{
                 ToastUtils.show(this, " 请重新签到");

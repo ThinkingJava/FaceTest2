@@ -89,7 +89,7 @@ public class VerifyActivity extends BaseAppcompatActivity implements CameraSurfa
         Intent intent = getIntent();
         mCameraId = intent.getIntExtra(ARG_CAMERA_ID, 1);
         mName = intent.getStringExtra(ARG_NAME);
-
+        mClass = intent.getStringExtra(ARG_CLASS);
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setCancelable(false);
 

@@ -1,16 +1,16 @@
 package com.example.yangchenghuan.main;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.example.yangchenghuan.adapter.AttendAdapter;
 import com.example.yangchenghuan.db.DatabaseHandler;
 import com.example.yangchenghuan.entity.Attend;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class AttendActivity extends AppCompatActivity {
@@ -46,6 +46,6 @@ public class AttendActivity extends AppCompatActivity {
                 R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.l));*/
         mAttend = new ArrayList<Attend>();
         mAttend=dbHandler.getALllAttend();  //获取所以数据
-
+        Log.d("---------------",mAttend.toString());
     }
 }

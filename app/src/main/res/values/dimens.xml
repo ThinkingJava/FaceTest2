@@ -42,4 +42,9 @@
     <dimen name="dp_104">104dp</dimen>
     <dimen name="dp_108">108dp</dimen>
     <dimen name="dp_120">120dp</dimen>
+
+
+    <dimen name="card_margin">5dp</dimen>
+    <dimen name="btn_fab_size">56dp</dimen>
+    <dimen name="btn_fab_margins">10dp</dimen>>
 </resources>

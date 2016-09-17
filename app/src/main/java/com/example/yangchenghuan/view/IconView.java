@@ -37,7 +37,7 @@ public class IconView extends View {
 	private Rect mTextBound;
 
 	private enum Ratio {
-		WIDTH, HEIGHT;
+		WIDTH, HEIGHT
 	}
 
 	public IconView(Context context) {

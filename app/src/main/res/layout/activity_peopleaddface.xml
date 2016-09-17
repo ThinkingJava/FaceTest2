@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         >
 
-        <EditText
+<!--        <EditText
             android:id="@+id/classEdit"
             android:layout_width="200dp"
             android:layout_height="@dimen/dp_48"
@@ -22,10 +22,22 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:background="@drawable/shape_edit_name"
-            android:hint="请输入您的班级"
+            android:hint="请选择您的班级"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:singleLine="true"
+            />-->
+        <Spinner
+            android:id="@+id/classEdit"
+            android:layout_width="200dp"
+            android:layout_height="@dimen/dp_48"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:background="@drawable/shape_edit_name"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+
             />
 
 
@@ -130,14 +142,15 @@
                     android:layout_weight="1">
 
                     <com.example.yangchenghuan.view.IconView
-                        android:id="@+id/offcialIcon"
+                        android:id="@+id/addIcon"
                         style="@style/menuIconStyle"
-                        app:iconDrawable="@drawable/ic_website"
-                        app:iconString="官网"
-                        app:iconTextColor="#ff9899"
+                        app:iconDrawable="@drawable/ic_add"
+                        app:iconString="重置"
+                        app:iconTextColor="#d7b1da"
                         />
 
                 </LinearLayout>
+
 
             </LinearLayout>
 

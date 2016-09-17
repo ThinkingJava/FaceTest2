@@ -18,4 +18,6 @@ public interface Constant {
 
     String RES_CODE_0000 = "0000";
 
+    String RES_CODE_1037 = "1037";
+
 }

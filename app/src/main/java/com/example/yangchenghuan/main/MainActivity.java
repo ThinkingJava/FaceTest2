@@ -60,10 +60,10 @@ public class MainActivity extends AppCompatActivity {
             public View getView(int position, View convertView, ViewGroup parent) {
                 final String text = getItem(position);
                 if (convertView == null) {
-                    convertView = (TextView) getLayoutInflater().inflate(R.layout.list_layout_mian, null);
+                    convertView = getLayoutInflater().inflate(R.layout.list_layout_mian, null);
                 }
                 ((TextView) convertView).setText(text);
-                ((TextView) convertView).setBackgroundColor(Color.rgb(100 + position * 10, 50 + position * 20, 150 + position * 2));
+                convertView.setBackgroundColor(Color.rgb(100 + position * 10, 50 + position * 20, 150 + position * 2));
                 return convertView;
             }
 

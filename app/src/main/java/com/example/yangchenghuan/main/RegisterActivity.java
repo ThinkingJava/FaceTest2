@@ -61,7 +61,7 @@ public class RegisterActivity extends BaseAppcompatActivity implements CameraSur
 
     private String CROWDNAME="mobile1";
 
-    private SQLiteDatabase db;
+
     private DatabaseHandler dbHandler;
 
     private int mCameraId;

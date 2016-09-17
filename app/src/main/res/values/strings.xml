@@ -29,8 +29,10 @@
     <string name="toast_verify_failed">认证失败</string>
     <string name="toast_no_faceId">未检测到人脸</string>
     <string name="toast_enroll_success">注册成功</string>
+    <string name="toast_crowd_success">添加班级成功</string>
     <string name="toast_class_success">添加班级成功</string>
     <string name="toast_delete_success">删除成功</string>
     <string name="toast_delete_failed_no_user">删除失败，用户不存在</string>
     <string name="toast_delete_failed">删除失败</string>
+
 </resources>
