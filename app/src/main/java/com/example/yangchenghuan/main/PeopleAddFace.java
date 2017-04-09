@@ -404,9 +404,7 @@ public class PeopleAddFace extends BaseAppcompatActivity {
         }
     }
 
-//    private void addGrade(Grade grade){
-//        db.addGrade(grade);
-//    }
+
     private List<String> getALLGrade(){
    //   List<Grade> gradeList = db.getALllGrade();
         List<String> item=new ArrayList<>();
